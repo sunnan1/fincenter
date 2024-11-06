@@ -1,1 +1,1 @@
-import './bootstrap';
+import '../../public/template/js/bootstrap.js';

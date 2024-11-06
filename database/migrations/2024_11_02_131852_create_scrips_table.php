@@ -13,15 +13,8 @@ return new class extends Migration
     {
         Schema::create('scrips', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('sector_id');
+            $table->unsignedBigInteger('sector_id');
             $table->string('name');
-            $table->float('ldcp');
-            $table->float('open');
-            $table->float('high');
-            $table->float('low');
-            $table->float('current');
-            $table->float('change');
-            $table->double('volume');
             $table->timestamps();
         });
     }

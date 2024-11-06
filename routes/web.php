@@ -12,4 +12,5 @@ Route::get('/login', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/' , [\App\Http\Controllers\SummaryController::class , 'index']);
+    Route::get('/funds' , [\App\Http\Controllers\SummaryController::class , 'funds']);
 });
