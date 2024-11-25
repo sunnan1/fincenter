@@ -55,29 +55,11 @@
                     </div>
 
                     <div class="navbar-container">
-                        <ul class="nav-left">
-                            <li class="header-search">
-                                <div class="main-search morphsearch-search">
-                                    <div class="input-group">
-                                        <span class="input-group-addon search-close"><i
-                                                class="feather icon-x"></i></span>
-                                        <input type="text" class="form-control">
-                                        <span class="input-group-addon search-btn"><i
-                                                class="feather icon-search"></i></span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#!" onclick="javascript:toggleFullScreen()">
-                                    <i class="feather icon-maximize full-screen"></i>
-                                </a>
-                            </li>
-                        </ul>
                         <ul class="nav-right">
                             <li class="user-profile header-notification">
                                 <div class="dropdown-primary dropdown">
                                     <div class="dropdown-toggle" data-toggle="dropdown">
-                                        <span>John Doe</span>
+                                        <span>{{ auth()->user()->name }}</span>
                                     </div>
                                     <ul class="show-notification profile-notification dropdown-menu"
                                         data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -111,9 +93,6 @@
                                                         <span>{{ $pageDescription ?? '' }}</span>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <span style="float: right;"><b>Last Updated : </b>{{ date('d M, Y H:i:s' , strtotime($lastUpdated->created_at)) }}</span>
                                             </div>
                                         </div>
                                     </div>

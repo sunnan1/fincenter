@@ -18,11 +18,11 @@ return new class extends Migration
             $table->float('nav');
             $table->float('ytd');
             $table->float('mtd');
-            $table->float('1_day');
-            $table->float('15_day');
-            $table->float('30_day');
-            $table->float('2_year');
-            $table->float('3_year');
+            $table->float('day_1');
+            $table->float('day_15');
+            $table->float('day_30');
+            $table->float('year_2');
+            $table->float('year_3');
             $table->timestamps();
         });
     }

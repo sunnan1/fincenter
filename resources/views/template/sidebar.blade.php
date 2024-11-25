@@ -20,6 +20,13 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="">
+                <a href="{{ url('/live-fund') }}">
+                    <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
+                    <span class="pcoded-mtext">Live Fund</span>
+                </a>
+            </li>
         </ul>
     </div>
 </nav>

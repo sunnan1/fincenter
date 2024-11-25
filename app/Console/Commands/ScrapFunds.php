@@ -44,7 +44,7 @@ class ScrapFunds extends Command
                     if (str_contains($cells->item(0)->nodeValue, 'Annualized')) {
                         $type = 'ANNUALIZED';
                     }
-                    if (str_contains($cells->item(0)->nodeValue, 'ABSOLUTE')) {
+                    if (str_contains($cells->item(0)->nodeValue, 'Absolute')) {
                         $type = 'ABSOLUTE';
                     }
                 } else if ($cells->length > 1){
@@ -63,14 +63,14 @@ class ScrapFunds extends Command
                         [
                             'fund_id' => $fund->id,
                             'validity_date' => date('Y-m-d' , strtotime(trim($cells->item(4)->nodeValue))),
-                            'nav' => floatval(trim($cells->item(5)->nodeValue)),
-                            'ytd' => floatval(trim($cells->item(6)->nodeValue)),
-                            'mtd' => floatval(trim($cells->item(7)->nodeValue)),
-                            '1_day' => floatval(trim($cells->item(8)->nodeValue)),
-                            '15_day' => floatval(trim($cells->item(9)->nodeValue)),
-                            '30_day' => floatval(trim($cells->item(10)->nodeValue)),
-                            '2_year' => floatval(trim($cells->item(15)->nodeValue)),
-                            '3_year' => floatval(trim($cells->item(16)->nodeValue)),
+                            'nav' => $this->formatValue($cells->item(5)->nodeValue),
+                            'ytd' => $this->formatValue(trim($cells->item(6)->nodeValue)),
+                            'mtd' => $this->formatValue(trim($cells->item(7)->nodeValue)),
+                            'day_1' => $this->formatValue(trim($cells->item(8)->nodeValue)),
+                            'day_15' => $this->formatValue(trim($cells->item(9)->nodeValue)),
+                            'day_30' => $this->formatValue(trim($cells->item(10)->nodeValue)),
+                            'year_2' => $this->formatValue(trim($cells->item(15)->nodeValue)),
+                            'year_3' => $this->formatValue(trim($cells->item(16)->nodeValue)),
                         ]
                     );
                 }
@@ -82,5 +82,14 @@ class ScrapFunds extends Command
                 'line' => $exception->getLine(),
             ]);
         }
+    }
+
+    public function formatValue($value) {
+        if (str_contains($value, '(')) {
+            $value = str_replace("(" , "" , $value);
+            $value = str_replace(")" , "" , $value);
+            return -1*floatval(trim($value));
+        }
+        return floatval(trim($value));
     }
 }

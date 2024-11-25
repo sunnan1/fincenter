@@ -1,4 +1,5 @@
 <link href="{{ asset('/template/css/bootstrap.min.css') }}" rel="stylesheet" />
+<link href="{{ asset('/template/css/themify-icons.css') }}" rel="stylesheet" />
 <link href="{{ asset('/template/css/feather.css') }}" rel="stylesheet" />
 <link href="{{ asset('/template/css/font-awesome.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('/template/css/icofont.css') }}" rel="stylesheet" />
@@ -10,4 +11,7 @@
 <link href="{{ asset('/template/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('/template/css/buttons.dataTables.min.css') }}" rel="stylesheet" />
 <link href="{{ asset('/template/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
-
+<link href="{{ asset('/template/css/bootstrap-multiselect.css') }}" rel="stylesheet" />
+<script src="{{ asset('/template/js/jquery.min.js') }}"></script>
+<script src="{{ asset('/template/js/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('/template/js/bootstrap.min.js') }}"></script>

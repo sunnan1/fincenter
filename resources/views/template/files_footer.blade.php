@@ -1,6 +1,3 @@
-<script src="{{ asset('/template/js/jquery.min.js') }}"></script>
-<script src="{{ asset('/template/js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('/template/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/template/js/i18next.min.js') }}"></script>
 <script src="{{ asset('/template/js/jquery.slimscroll.js') }}"></script>
 <script src="{{ asset('/template/js/jquery-i18next.min.js') }}"></script>
@@ -18,4 +15,8 @@
 <script src="{{ asset('/template/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('/template/js/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('/template/js/responsive.bootstrap4.min.js') }}"></script>
-<script src="{{ asset('/template/js/data-table-custom.min.js') }}"></script>
+<script>
+        $(document).ready(function(){
+        $(".stocksList").select2();
+    });
+</script>

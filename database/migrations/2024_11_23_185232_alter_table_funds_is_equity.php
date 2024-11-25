@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('scrips', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('sector_id')->nullable();
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('funds', function (Blueprint $table) {
+           $table->boolean('is_active')->default(false);
         });
     }
 
@@ -24,6 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('scrips');
+        //
     }
 };

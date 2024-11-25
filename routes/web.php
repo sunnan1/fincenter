@@ -12,5 +12,10 @@ Route::get('/login', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/' , [\App\Http\Controllers\SummaryController::class , 'index']);
-    Route::get('/funds' , [\App\Http\Controllers\SummaryController::class , 'funds']);
+    Route::get('/funds' , [\App\Http\Controllers\FundController::class , 'getFunds']);
+    Route::get('/add-fund' , [\App\Http\Controllers\FundController::class , 'addFund']);
+    Route::get('/fund/{fund}' , [\App\Http\Controllers\FundController::class , 'editFund']);
+    Route::post('/save-fund' , [\App\Http\Controllers\FundController::class , 'saveFundStock']);
+    Route::get('/delete-fund/{id}' , [\App\Http\Controllers\FundController::class , 'removeMapping']);
+    Route::get('/live-fund' , [\App\Http\Controllers\FundController::class , 'showLiveFunds']);
 });
